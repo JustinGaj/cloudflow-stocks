@@ -1,0 +1,10 @@
+fastapi==0.95.2
+uvicorn[standard]==0.22.0
+pandas==2.2.2
+pyyaml==6.0
+pylint==2.17.6
+pylint-pyreverse==2.17.6
+graphviz==0.20.1
+pytest==7.4.0
+kaggle==1.5.17
+python-dotenv==1.0.0
