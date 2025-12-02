@@ -1,0 +1,43 @@
+version: '3.8'
+services:
+  backend:
+    image: ghcr.io/yourorg/backend:${VERSION}
+    container_name: cloudflow_backend
+    environment:
+      - DATA_PATH=/app/data/sample.csv
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+  frontend:
+    image: ghcr.io/yourorg/frontend:${VERSION}
+    container_name: cloudflow_frontend
+    restart: unless-stopped
+    expose:
+      - "80"
+  nginx:
+    image: nginx:stable
+    container_name: cloudflow_nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/cloudflowstocks.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - frontend
+      - backend
+  prometheus:
+    image: prom/prometheus
+    container_name: cloudflow_prometheus
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    ports:
+      - "9090:9090"
+  grafana:
+    image: grafana/grafana
+    container_name: cloudflow_grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana-storage:/var/lib/grafana
+volumes:
+  grafana-storage:
