@@ -1,0 +1,10 @@
+{
+  "meta": {
+    "name": "CloudFlowStocks Sample"
+  },
+  "dashboard": {
+    "id": null,
+    "title": "CloudFlowStocks",
+    "panels": []
+  }
+}
