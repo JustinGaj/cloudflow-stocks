@@ -1,0 +1,19 @@
+{
+  "name": "cloudflowstocks-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "chart.js": "^4.3.0",
+    "react-chartjs-2": "^5.2.0"
+  },
+  "scripts": {
+    "start": "parcel public/index.html --port 3000",
+    "build": "parcel build public/index.html --dist-dir build",
+    "test": "echo \"No tests configured\" && exit 0"
+  },
+  "devDependencies": {
+    "parcel": "^2.9.3"
+  }
+}
