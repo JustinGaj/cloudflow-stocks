@@ -1,0 +1,10 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'jenkins'
+    static_configs:
+      - targets: ['jenkins:8080']  # if Jenkins is in same compose / network and exposes metrics
+  - job_name: 'node-exporter'
+    static_configs:
+      - targets: ['host.docker.internal:9100']  # adjust for DO
