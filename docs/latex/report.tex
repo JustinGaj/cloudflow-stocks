@@ -1,0 +1,47 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\title{Configuring and Running the DevOps Pipeline}
+\author{CloudFlowStocks Team}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section*{Overview}
+This document describes the DevOps pipeline used for the CloudFlowStocks project.
+
+\section{V-Curve Steps and Tools}
+% Briefly list tools (you can expand)
+Issue tracking: GitHub Issues
+
+Source control: Git/GitHub
+
+Forward docs: Overleaf / LaTeX
+
+CI/CD: Jenkins
+
+Testing: pytest, Jest
+
+Deployment: Docker, Docker Compose
+
+Monitoring: Prometheus + Grafana
+
+Reverse docs: Pyreverse + Graphviz
+
+\section{Generated UML}
+The following image(s) are generated automatically via Pyreverse and included in the report.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.9\textwidth]{../generated/classes_backend_diagrams.png}
+  \caption{Backend class diagram (auto-generated via Pyreverse)}
+\end{figure}
+
+\section{Pipeline}
+Describe the Jenkins pipeline here: checkout, tests, docs generation, docker build & scan, package, deploy.
+
+\section{Versioning and Artifacts}
+The pipeline produces artifacts named: \texttt{artifact\_MAJOR.MINOR.CHANGELIST.zip}. The changelist uses the short git commit hash.
+
+\end{document}
